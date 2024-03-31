@@ -25,3 +25,7 @@ Number theory visualized via code
 ## Number system converter (C++)
 
 Converts decimal number system values to binary number system values and then binary system values to hexidecimal system values
+
+## Pi Estimator (C++)
+
+Estimate PI using the unit circle
