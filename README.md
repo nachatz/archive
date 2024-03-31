@@ -17,3 +17,7 @@ Collection of algorithms implemented from scratch
 ## Pathfinders (C++)
 
 Pathing algorithms implemented from scratch
+
+## Number Theory (C++/Python)
+
+Number theory visualized via code
