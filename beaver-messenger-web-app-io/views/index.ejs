@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    
+  <head>
+      
+    <meta charset="utf-8">
+    <title>Final Project</title>
+
+    <!-- This 3rd-party stylesheet incorporates SVG icons from Font Awesome: http://fontawesome.com/ -->
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet.css" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" crossorigin="anonymous">
+    <script defer src="https://sheltered-falls-43076.herokuapp.com/socket.io/socket.io.js"></script>
+    <script src="/index.js" defer></script>
+    <link rel="stylesheet.css" href="stylesheet.css">
+    <style>
+        #room-container{
+            border-radius: 25px;
+            box-shadow: 0px 0px 10px 10px black;
+            background: white;
+            padding: 20px;
+            width: 400px;
+            height: 650px;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        #element{
+            height: 20px;
+            padding: 5px;
+            border: black 1px solid;
+            text-align: center;
+        }
+        h2{
+            height: 20px;
+            padding: 5px;
+            box-shadow: 0px 0px 10px 10px #ff8300;
+            text-align: center;
+        }
+        #e{
+            width: 40px;
+            margin:auto;
+            padding: 2px;
+            display:block;
+            text-align:center
+        }
+        img{
+            z-index: -1;
+        }
+    </style>
+  </head>
+    
+  <body id="body">
+        
+    <%- include('partials/banner.ejs') %>
+    
+        <div id ="room-container" class='center'>
+            <h2 id='element'>Chat Rooms</h2>
+            <% Object.keys(rooms).forEach(room =>{ %>
+                <div id='element' class="room-element"> <%= room %> </div>
+                <a id='e' class="room-element" href="/<%= room %>">Join</a>
+                <% }) %>
+        </div>
+
+    <form id=room-form action="/room" method="POST" class='center'>
+        <input id="room-form-input" name="room" type="text" required>
+        <button id="room-form-button" type="submit">New Room</button>
+    </form>
+  </body>
+
+<html>
